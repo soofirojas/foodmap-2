@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Foodmap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!--contenedor de la barra global que contiene identidad gráfica-->
+    <header>
+            <div class="container-fluid">
+                <div class="col-xs-12">
+                    <img src="assets/images/logo-blanco.png" alt="logo el buen comer" class="logo center-block">
+                </div>
+            </div>
+        </header>
+        <!--contenedor de la barra de búsqueda-->
+        <nav>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Filtrar restaurantes...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+        </nav>
+        <!--contenedor de mapa-->
+    <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="color-card">
+                            <img class="card-img-top center-block margin-top-5 margin-bottom-5 width-auto img-responsive" src="assets/images/map.png" alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+        </section>
+    <!--contenedor de info restaurante-->
+    <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="color-card">
+                            <div class="card-deck">
+                                <div class="card">
+                                    <img class="card-img-top center-block margin-top-5 img-responsive" src="https://dummyimage.com/300x200/000000/ffffff" alt="Card image cap">
+                                    <div class="card-body margin-all">
+                                        <h4 class="card-title">
+                                            <strong>Restaurant name</strong>
+                                        </h4>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+                                            This content is a little bit longer.</p>
+                                        
+                                            <button type="button" class="btn btn-info btn-lg btn-block blue-button" data-toggle="modal" data-target="#myModal">Open Modal</button>
+                                    <!--    <button type="button" class="btn btn-primary btn-lg btn-block blue-button" data-toggle="modal" data-target="#modal-restaurant">Block level button</button>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+
+<!--boton modal
+
+<div class="container">
+  <h2>Modal Example</h2>
+  !-- Trigger the modal with a button --
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+<!--Enlaces de jquery y js-->
+
+
+</body>
+</html>

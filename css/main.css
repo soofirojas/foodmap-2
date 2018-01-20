@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background: #003996;
+    height: 11vh;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+.logo {
+    height: 9vh;
+    margin-top: 1vh;
+}
+
+nav {
+    width: 100%;
+    border-radius: 0.6rem;
+    height: 6vh;
+    margin-top: 3%;
+}
+
+.color-card {
+    height: auto;
+    border-radius: 0.6rem;
+    border: solid 1px #003996;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+section, .margin-top-5 {
+    margin-top: 5%;
+}
+
+.margin-all {
+    margin: 7%;
+}
+
+.blue-button {
+    background: #003996;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5%;
+}
+
+.width-auto {
+    width: 300px;
+}
