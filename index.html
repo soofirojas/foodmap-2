@@ -3,7 +3,7 @@
 <head>
   <title>Foodmap</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Filtrar restaurantes...">
+                            <input type="text" class="form-control" placeholder="Filtrar restaurantes..." id="searcher">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search fa-lg" aria-hidden="true"></i>
@@ -46,14 +46,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div class="color-card">
-                            <img class="card-img-top center-block margin-top-5 margin-bottom-5 width-auto img-responsive" src="assets/images/map.png" alt="Card image cap">
+                        <div class="color-card" id="map">
+                            
                         </div>
                     </div>
                 </div>
         </section>
     <!--contenedor de info restaurante-->
-    <section>
+    <section id="restaurant-card" >
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12">
@@ -108,9 +108,71 @@
     </div>
   </div>
   
-</div>
+
+<!-- Mapa de google-->
+<script>
+    // Note: This example requires that you consent to location sharing when
+    // prompted by your browser. If you see the error "The Geolocation service
+    // failed.", it means you probably did not give permission for the browser to
+    // locate you.
+
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 19.416789, lng: -99.169647},
+        zoom: 16
+      });
+      var infoWindow = new google.maps.InfoWindow({map: map});
+
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Location found.');
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4IHZjhlkyYrOpxldjVz8QRnVAcN7AAfU&callback=initMap">
+  </script>
 
 
+
+
+<!--<script>
+    function initMap() {
+      var uluru = {lat: 19.416789, lng: -99.169647};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+  </script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4IHZjhlkyYrOpxldjVz8QRnVAcN7AAfU&callback=initMap">
+  </script>-->
 
 
 
@@ -119,6 +181,12 @@
 
 <!--Enlaces de jquery y js-->
 
+<script
+  src="https://code.jquery.com/jquery-3.3.0.min.js"
+  integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4="
+  crossorigin="anonymous"></script>
+<script src="js/data.js"></script>
+<script src="js/appjq.js"></script>
 
 </body>
 </html>
